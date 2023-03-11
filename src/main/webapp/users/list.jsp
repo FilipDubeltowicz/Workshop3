@@ -28,9 +28,9 @@
                     <th scope="row">${user.id}</th>
                     <td>${user.username}</td>
                     <td>${user.email}</td>
-                    <td><a href="add.jsp"> Dodaj</a>
-                        <a href="edit.jsp"> Edytuj</a>
-                        <a href="show.jsp"> Pokaz</a>
+                    <td><a href="/user/delete">Usuń</a>
+                        <a href="/user/edit?id=${user.id}">Edytuj</a>
+                        <a href="/user/show">Pokaz</a>
                     </td>
                 </tr>
             </c:forEach>

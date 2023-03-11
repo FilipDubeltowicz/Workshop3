@@ -12,6 +12,7 @@
                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
 
+        <input type="hidden" name="id" value="${param.id}" >
 
 
 

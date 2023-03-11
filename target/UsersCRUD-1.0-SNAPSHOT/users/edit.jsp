@@ -11,6 +11,24 @@
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
+        <h1>Edytuj Użytkownika</h1>
+        <form action="/user/edit" method="POST">
+            <input type="hidden" name="id" value="${user.id}"/>
+            <div class="form-group">
+                <label>Podaj nową nazwę:</label>
+                <input value="${user.username}" type="text" class="form-control" name="newName">
+            </div>
+
+            <div class="form-group">
+                <label>Podaj nowy Email:</label>
+                <input value="${user.email}" type="email" class="form-control" name="newEmail">
+            </div>
+            <div class="form-group">
+                <label>Podaj nowe hasło:</label>
+                <input value="${user.password}" type="password" class="form-control" name="newPassword">
+            </div>
+            <button type="submit" class="btn btn-primary">Edytuj</button>
+        </form>
 
 
 
