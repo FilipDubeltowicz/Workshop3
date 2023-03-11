@@ -15,6 +15,12 @@ public class UserShow extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String id = request.getParameter("id");
+        System.out.println(id);
+
+        UserDao userDao = new UserDao();
+        request.setAttribute("user", userDao.findById(Long.parseLong(id)));
+
         getServletContext().getRequestDispatcher("/users/show.jsp")
                 .forward(request, response);
     }
@@ -22,8 +28,5 @@ public class UserShow extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        
-
-        response.sendRedirect(request.getContextPath() + "/user/list");
     }
 }

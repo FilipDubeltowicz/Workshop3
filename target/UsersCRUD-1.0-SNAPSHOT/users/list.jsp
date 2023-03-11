@@ -22,20 +22,20 @@
             </tr>
             </thead>
             <tbody>
-            <%--            Początek petli--%>
             <c:forEach items="${users}" var="user">
                 <tr>
                     <th scope="row">${user.id}</th>
                     <td>${user.username}</td>
                     <td>${user.email}</td>
-                    <td><a href="/user/delete">Usuń</a>
+                    <td><a href="/user/delete?id=${user.id}">Usuń</a>
                         <a href="/user/edit?id=${user.id}">Edytuj</a>
-                        <a href="/user/show">Pokaz</a>
+                        <a href="/user/show?id=${user.id}">Pokaz</a>
                     </td>
                 </tr>
             </c:forEach>
             <%--            koniec pętli--%>
             </tbody>
+        <%--            Początek petli--%>
         </table>
 
     </div>

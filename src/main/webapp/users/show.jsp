@@ -12,9 +12,22 @@
                     class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
         </div>
 
-
-
-
+        <table class="table">
+            <tbody>
+            <tr>
+                <th scope="row">id:</th>
+                <td>${user.id}</td>
+            </tr>
+            <tr>
+                <th scope="row">Nazwa Użytkownika:</th>
+                <td>${user.username}</td>
+            </tr>
+            <tr>
+                <th scope="row">Email:</th>
+                <td>${user.email}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <!-- End of Main Content -->
 <%@ include file="/users/footer.jsp" %>

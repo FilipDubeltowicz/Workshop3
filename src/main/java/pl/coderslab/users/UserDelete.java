@@ -15,21 +15,16 @@ public class UserDelete extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        getServletContext().getRequestDispatcher("/users/delete.jsp")
-                .forward(request, response);
-    }
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String id = request.getParameter("id");
         System.out.println(id);
 
         UserDao userDao = new UserDao();
         request.setAttribute("deleteUser",userDao.delete(Long.parseLong(id)));
 
-        getServletContext().getRequestDispatcher("/users/list.jsp")
-                .forward(request, response);
-
         response.sendRedirect(request.getContextPath() + "/user/list");
+
+    }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 }
