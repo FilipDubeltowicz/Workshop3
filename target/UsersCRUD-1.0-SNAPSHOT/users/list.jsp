@@ -11,6 +11,11 @@
             <a href="/user/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                     class="fas fa-download fa-sm text-white-50"></i>Dodaj Użytkownika</a>
         </div>
+        <script>
+            function confirmDelete() {
+                return confirm("Czy na pewno chcesz usunąć tego użytkownika?");
+            }
+        </script>
         <h1>Lista Użytkowników</h1>
         <table class="table">
             <thead>
@@ -27,7 +32,7 @@
                     <th scope="row">${user.id}</th>
                     <td>${user.username}</td>
                     <td>${user.email}</td>
-                    <td><a href="/user/delete?id=${user.id}">Usuń</a>
+                    <td><a href="/user/delete?id=${user.id}" onclick="return confirmDelete();">Usuń</a>
                         <a href="/user/edit?id=${user.id}">Edytuj</a>
                         <a href="/user/show?id=${user.id}">Pokaz</a>
                     </td>
@@ -35,9 +40,9 @@
             </c:forEach>
             <%--            koniec pętli--%>
             </tbody>
-        <%--            Początek petli--%>
+            <%--            Początek petli--%>
         </table>
 
     </div>
-    <!-- End of Main Content -->
+<!-- End of Main Content -->
 <%@ include file="/users/footer.jsp" %>
